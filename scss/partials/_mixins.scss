@@ -1,0 +1,30 @@
+// BUTTON
+
+@mixin button($btn-color, $font-size, $width-btn){
+
+  display: block;
+  text-align: center;
+  background-color: $btn-color;
+  font-size: $font-size;
+  color: #fff;
+  margin: 0 auto;
+  border-radius: 3px 3px 0 0;
+  width: $width-btn;
+  padding: 10px;
+  transition: 0.3s;
+
+  &:hover, &:focus {
+    background-color: lighten($bleu-clair, 10%);
+    text-decoration: none;
+  }
+}
+
+// title
+
+@mixin title($title-color, $font-size) {
+  text-align: center;
+  color: $title-color;
+  font-size: $font-size;
+  padding: 50px 0 0;
+  margin: 0;
+}

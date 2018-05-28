@@ -1,0 +1,195 @@
+
+.section-title {
+  @include title($bleu-fonce, 3.75em);
+}
+
+/* ===================== MAIN NAV ======================== */
+
+#sidr.main-nav {
+  display: inline;
+  position: relative;
+}
+
+#sophro-hypno-container {
+  max-width: 780px;
+}
+
+#nav-toggle {
+  display: none;
+}
+
+#close-btn {
+  display: none;
+}
+
+.main-nav {
+  padding-bottom: 80px;
+  ul {
+    display: flex;
+    justify-content: center;
+    li {
+      margin: 0 20px;
+      padding: 10px 0;
+      a {
+        padding: 20px;
+        color: #fff;
+        font-family: $font-title;
+        font-size: 1.25em;
+      }
+    }
+  }
+}
+
+
+ul.dropdown {
+  display: none;
+}
+
+li.has-sub {
+  position: relative;
+  &:hover {
+    background-color: $jaune;
+    border-radius: 3px 3px 0 0;
+  }
+}
+
+li:hover a.title-nav {
+  color: $bleu-fonce;
+}
+
+li.has-sub:hover ul.dropdown{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 9999;
+  background-color: $jaune;
+  width: 100%;
+  border-radius: 0 0 3px 3px;
+}
+
+ul.dropdown li {
+  text-align: left;
+  padding: 10px 0;
+  margin: 0;
+  a {
+    font-size: 1em;
+    font-family: $font-default;
+  }
+}
+
+ul.dropdown li:hover a {
+  color: $bleu-fonce;
+}
+
+/* ===================== MAP SVG ======================== */
+
+#map-svg {
+  margin-top: 40px;
+  svg {
+    margin-left: 30%;
+    width: 70%;
+  }
+  p {
+    top: 10px;
+  }
+}
+
+text, ellipse, circle{
+  fill:#666;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+g:hover text, g:hover ellipse, g:hover circle, g:hover .st0{
+  fill:$bleu-fonce;
+  opacity: 1;
+}
+
+g:hover .st2 {
+  fill:#FFFFFF;
+}
+
+/* ===================== SEARCH ======================== */
+
+.search-form {
+  top: 200px;
+}
+
+/* =====================NAV BOTTOM ======================== */
+
+.nav-bottom{
+
+.log {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  margin-right: 0;
+}
+.cta {
+  margin: 0 auto;
+}
+}
+
+/* ===================== SLIDER ======================== */
+
+#destinations {
+  .slider {
+    article {
+      flex-basis: 30%;
+    }
+}
+
+}
+
+/* ===================== DESTINATIONS ======================== */
+
+#destinations {
+  article {
+    a {
+      transition: 0.3s;
+      &:hover {
+        img {
+          filter: grayscale(80%);
+        }
+        p.hover {
+          display: block;
+          position: absolute;
+          bottom: 20%;
+          left: 35%;
+          z-index: 99999999;
+          font-size: 3em;
+          font-family: $font-title;
+          color: #fff;
+        }
+      }
+    }
+
+  }
+}
+
+
+/* ===================== STORIES ======================== */
+
+.stories {
+  position: relative;
+  .stories-bloc a {
+      transition: 0.3s;
+    &:hover {
+      img {
+        filter: grayscale(80%);
+      }
+      p.hover {
+        display: block;
+        position: absolute;
+        top: 30%;
+        left: 25%;
+        z-index: 99999999;
+        font-size: 5em;
+        font-family: $font-title;
+        color: #fff;
+      }
+    }
+
+  }
+
+}

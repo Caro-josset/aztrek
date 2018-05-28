@@ -1,0 +1,874 @@
+/* ---------------------------------------------------------------
+                        BASES
+--------------------------------------------------------------- */
+
+body {
+  font-family: 'Hind', sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  font-family: $font-default;
+  line-height: normal;
+  font-weight: normal;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.section-title, h1 {
+  font-family: $font-title;
+}
+
+.section-title {
+  @include title($bleu-fonce, 1.75em);
+}
+
+.title-p {
+  font-size: 0.875em;
+}
+
+.cta {
+  @include button($jaune, 0.80em, 110px);
+}
+
+p.hover {
+  display: none;
+}
+
+/* ---------------------------------------------------------------
+                        HEADER
+--------------------------------------------------------------- */
+#main-header {
+  background: url('../images/bg-header.jpg') center;
+  background-size: cover;
+  position: relative;
+}
+
+#header-title {
+  margin: 0 auto;
+  img {
+    width: 40%;
+    margin: 0 auto;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.4em;
+    color: $bleu-fonce;
+  }
+}
+
+/* ===================== SEARCH ======================== */
+
+.search-form {
+  position: absolute;
+  top: 70px;
+  right: 15px;
+  display: flex;
+  input[type="text"] {
+    background-color: rgba(#fff, 0.7);
+    width: 0px;
+  }
+  .search-btn {
+    font-size: 0;
+    display: block;
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+    background: url('../images/picto-loupe.svg') no-repeat transparent;
+  }
+}
+
+.search-form:active input[type="text"], .search-form:focus input[type="text"]{
+  width: 240px;
+}
+
+/* ===================== MAIN-NAV ======================== */
+
+#sidr.main-nav {
+  display: none;
+}
+
+/* boutton close*/
+.sidr-inner {
+
+  position: relative;
+
+  button#sidr-id-close-btn {
+    position: absolute;
+    background-color: transparent;
+    background-image: url('../images/close.svg');
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+  }
+}
+
+/* menu burger*/
+#nav-toggle {
+  font-size: 0;
+  padding: 20px;
+  margin: 20px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 2rem;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url("../images/burger.svg") no-repeat;
+  }
+}
+
+/*menu-déroulant*/
+
+/*reset*/
+.sidr ul li,
+.sidr ul li ul li:hover a,
+.sidr ul li:hover,
+.sidr ul li:hover a,
+ul.sidr-class-dropdown li a,
+#sidr-main {
+  border: none;
+  box-shadow: 0 0 0 0;
+}
+
+.sidr ul li.active,
+.sidr ul li.sidr-class-active,
+.sidr ul li:hover {
+  box-shadow: 0 0 0 0;
+}
+
+/*-----*/
+
+#sidr-main {
+  padding: 20px;
+  background-color: $bleu-clair;
+}
+
+.sidr ul li ul {
+  border: none;
+  background: #fff;
+  width: 170px;
+  border-radius: 3px;
+  margin-left: 40px;
+    li a {
+    color: $bleu-clair;
+    font-size: 1.25em;
+    padding: 10px;
+    }
+}
+
+.sidr-inner {
+  ul {
+    border: none;
+    li {
+      a {
+        color: #fff;
+        font-size: 1.25em;
+        font-family: $font-title;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+#sidr-id-close-btn {
+  font-size: 0;
+  display: block;
+  position: relative;
+}
+
+#sidr-id-close-btn::before {
+  content: '\f057';
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.7rem;
+  position: absolute;
+  left: 240px;
+  top: 20px;
+  color: #fff;
+}
+
+.sidr ul.sidr-class-dropdown {
+  display: none;
+}
+
+.sidr ul li #sidr-id-home {
+  font-size: 0;
+  position: relative;
+  display: block;
+  padding-top: 50px;
+}
+
+.sidr ul li #sidr-id-home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 45px;
+  height: 45px;
+  background: url("../images/home-07.svg") no-repeat;
+}
+
+/* ===================== MAP SVG ======================== */
+
+#map-svg {
+  width: 70%;
+  margin: 0 auto 30px auto;
+  position: relative;
+
+  p {
+    font-family: $font-title;
+    font-size: 0.85em;
+    position: absolute;
+    left: 10px;
+    bottom: 10%;
+    width: 50%;
+    color: #fff;
+  }
+}
+
+.st0{fill:#F7BE00;stroke:#FFFFFF;}
+.st1{fill:none;}
+.st2{fill:#fff;}
+.st3{font-family:'Exo-Regular';}
+.st4{font-size:10px;}
+.st5{fill:#FFDD92;stroke:#FFFFFF;}
+
+/* ===================== NAV-BOTTOM ======================== */
+
+.nav-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  .cta {
+    margin: 0;
+    margin-left: 10px;
+  }
+  .log {
+    font-size: 0;
+    width: 45px;
+    height: 45px;
+    background: url('../images/user.svg') no-repeat;
+    margin-right: 80px;
+  }
+}
+
+
+
+
+
+/* ---------------------------------------------------------------
+                        MAIN
+--------------------------------------------------------------- */
+
+/* ===================== Destinations ======================== */
+
+#destinations{
+  padding: 0 10%;
+  .title-p {
+    text-align: center;
+    padding: 0 60px;
+  }
+  .voyages {
+    h2 {
+      font-size: 2.5em;
+      color: $jaune;
+      font-family: $font-title;
+      text-align: center;
+    }
+    article {
+      position: relative;
+    }
+    .legende {
+      position: absolute;
+      top: 100px;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      padding: 5px 20px;
+      display: flex;
+      justify-content: space-between;
+      a {
+        color: #fff;
+        font-size: 0.8em;
+        position: relative;
+        padding: 20px 0;
+        &:last-of-type {
+          padding-left: 45px;
+          &::before {
+          content: '';
+          width: 45px;
+          height: 45px;
+          background: url('../images/picto-marche.png') no-repeat;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        }
+      }
+    }
+  }
+}
+
+.voyages article p.price {
+  text-align: right;
+  font-size: 1em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 50px;
+  &::before {
+    content: '';
+    background: url('../images/picto-tarif.png') no-repeat;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+// .owl-nav {
+//   display: none;
+// }
+
+.owl-nav {
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 50%;
+  button {
+    position: absolute;
+    font-size: 0;
+    bottom: 50%;
+  }
+  .owl-prev {
+      &::before {
+        content: '';
+        background: url('../images/fleche-slider.svg') no-repeat;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(180deg);
+      }
+  }
+  .owl-next {
+      &::before {
+        content: '';
+        background: url('../images/fleche-slider.svg') no-repeat;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+  }
+}
+
+#destinations {
+  .slider {
+    display: none;
+  }
+}
+
+
+/* ===================== Stories ======================== */
+
+#stories {
+  header {
+    padding: 20px;
+    background: $bleu-clair;
+    color: #fff;
+    position: relative;
+    &::after {
+      content: '';
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      background: url('../images/cercles-stories.png') no-repeat;
+      bottom: -20px;
+      left: 26px;
+    }
+    .section-title {
+      @include title(#fff, 4.3em);
+      text-align: left;
+      margin-left: 40px;
+    }
+    h2 {
+      margin: 0;
+    }
+  }
+
+  article.header-article{
+    display: flex;
+    flex-direction: column;
+    .title-p {
+      padding: 40px 0;
+      text-align: right;
+      margin: 0 0 0 auto;
+    }
+    p:last-of-type {
+      font-family: $font-title;
+      font-size: 1.3em;
+      text-align: center;
+    }
+  }
+}
+
+.stories {
+  display: flex;
+  padding: 5px;
+  margin-top: 50px;
+  article {
+    flex-basis: 33.33%;
+    margin: 0 5px 40px 5px;
+    position: relative;
+    padding-top: 30px;
+    .profil {
+      font-size: 0.6em;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      z-index: 9999;
+      p {
+        text-align: left;
+        padding-left: 5px;
+      }
+      img {
+        border-radius: 50%;
+        border: 2px solid #fff;
+        width: 33%;
+        height: 33%;
+      }
+    }
+  }
+}
+
+.stories-img {
+  position: relative;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  color: #fff;
+  font-size: 0.56em;
+
+  p:first-of-type {
+    position: relative;
+    margin: 0;
+    padding-top: 15px;
+    &::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: url('../images/jaime.svg') no-repeat;
+      position: absolute;
+      top: 0;
+      left: 2px;
+    }
+  }
+
+  p:last-of-type {
+    position: relative;
+    margin: 0;
+    padding-top: 15px;
+    &::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: url('../images/eye.svg') no-repeat;
+      position: absolute;
+      top: 0;
+      left: 2px;
+    }
+  }
+
+}
+
+.stories-bloc p.title-storie {
+  font-size: 0.7em;
+  text-align: center;
+  padding: 10px 5px;
+}
+
+#stories .cta {
+  @include button($bleu-fonce, 0.80em, 110px);
+}
+
+/* ===================== Communauté ======================== */
+
+#communaute {
+  background: url('../images/bg-communaute.jpg')no-repeat top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  // padding-top: 70px;
+  &::before {
+    content: '';
+    width: 80px;
+    height: 80px;
+    background: url('../images/forme-cercles-commu.png') no-repeat;
+    position: absolute;
+    top: 140px;
+    right: 40px;
+  }
+  .title-p {
+    font-family: $font-title;
+    text-align: center;
+    padding: 150px 60px 40px 60px;
+    margin: 0 auto;
+    display: block;
+  }
+
+}
+
+#communaute {
+  article {
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 175px;
+  }
+  img {
+    border-radius: 50%;
+    border: 3px solid #fff;
+    filter: grayscale(100%);
+  }
+  h2 {
+    font-size: 1em;
+    text-align: center;
+    color: $bleu-fonce;
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75em;
+    }
+  }
+
+p.level-5{
+  text-align: right;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding-left: 45px;
+  align-items: center;
+  &::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: url('../images/picto-niveau-5.svg') no-repeat;
+    position: absolute;
+    left: 0;
+  }
+}
+
+p.level-4 {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding-left: 45px;
+  align-items: center;
+  &::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: url('../images/picto-niveau-4.svg') no-repeat;
+    position: absolute;
+    left: 0;
+  }
+}
+
+.users-research {
+  background-color: $gris;
+  border-top: 10px solid #fff;
+  border-bottom: 10px solid #fff;
+  text-align: center;
+  padding: 20px 0;
+  p {
+    font-family: $font-title;
+    color: $bleu-fonce;
+    font-size: 0.75em;
+    margin: 0;
+    padding-bottom: 20px;
+  }
+  .forum-research {
+    width: 290px;
+    margin: 0 auto;
+    display: flex;
+    .search-btn {
+      font-size: 0;
+      display: block;
+      height: 30px;
+      width: 30px;
+      margin: 0 10px;
+      padding: 10px;
+      background: url('../images/picto-loupe-bleu.svg') no-repeat transparent;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding-left: 20px;
+    }
+  }
+}
+
+#communaute .cta {
+  @include button($bleu-fonce, 0.75em, 110px);
+  margin-top: 30px;
+}
+
+/* ===================== Actu ======================== */
+
+#actu {
+    position: relative;
+    margin-bottom: 40px;
+  .title-container {
+    &::before {
+      content: '';
+      background: url('../images/cercles-actu.png') no-repeat right top;
+      width: 33.33%;
+      height: 60px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    h1 {
+      text-align: center;
+      color: $bleu-fonce;
+      font-size: 2em;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.125em;
+    }
+  }
+}
+
+.insta {
+  margin: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  #insta-title {
+    position: relative;
+    font-size: 0.75em;
+    padding-left: 75px;
+    &::before {
+      content: '';
+      width: 80px;
+      height: 60px;
+      background: url('../images/logo.svg') no-repeat cover;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+  figure {
+    margin: 0;
+    .nav-insta ul{
+      display: flex;
+  }
+  figcaption {
+    font-size: 0.75em;
+  }
+}
+
+.nav-insta ul {
+  li {
+    margin: 0 15px;
+    &:nth-of-type(1) {
+      background: url('../images/picto-coeur.svg') no-repeat;
+    }
+    &:nth-of-type(2) {
+      background: url('../images/picto-commentaire.svg') no-repeat;
+    }
+  }
+  li a {
+    // padding: 15px;
+    font-size: 0;
+    display: block;
+    width: 45px;
+    height: 35px;
+  }
+}
+
+}
+
+#actu .cta {
+  @include button($jaune, 0, 70px);
+  position: relative;
+  padding: 35px;
+  margin-right: 25%;
+  &::before {
+    content: '';
+    background: url('../images/picto-instagram.svg') no-repeat;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 4px;
+  }
+}
+
+/* ===================== Concept ======================== */
+
+#concept {
+  background: url('../images/bg-concept-mobile.jpg') no-repeat left top;
+  background-size: cover;
+
+  .section-title {
+      @include title($bleu-fonce, 3em);
+      text-align: left;
+      padding: 0;
+      padding-left: 10%;
+      padding-top: 30px;
+      padding-bottom: 80px;
+      position: relative;
+      &::after {
+        content: '';
+        background: url('../images/cercles-actu.png') no-repeat right top;
+        width: 33.33%;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+  }
+  article {
+    margin: 100px 0 100px 20px;
+    padding: 30px 30px 30px 0;
+    width: 80%;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75em;
+  }
+
+  .cta {
+    @include button($jaune, 0.80em, 110px);
+    margin: 0;
+    margin-left: 10%;
+  }
+}
+
+/* ---------------------------------------------------------------
+                        FOOTER
+--------------------------------------------------------------- */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $bleu-fonce;
+  padding: 30px 0;
+  #logo-footer {
+    width: 33.33%;
+    margin: 20px;
+  }
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    a {
+      padding: 70px 15px 40px;
+      color: #fff;
+      position: relative;
+      &:first-of-type::before {
+        content: '';
+        background: url('../images/tel.svg') no-repeat;
+        width: 33.33%;
+        height: 60px;
+        position: absolute;
+        left: 40px;
+        top: 0;
+      }
+      &:last-of-type::before {
+        content: '';
+        background: url('../images/mail.svg') no-repeat;
+        width: 33.33%;
+        height: 60px;
+        position: absolute;
+        left: 50px;
+        top: 0;
+      }
+    }
+  }
+  #social-nav ul {
+    display: flex;
+    justify-content: space-between;
+    li {
+      margin: 0 15px;
+      &:nth-of-type(1) {
+        background: url('../images/facebook.svg') no-repeat;
+      }
+      &:nth-of-type(2) {
+        background: url('../images/picto-instagram.svg') no-repeat;
+      }
+      &:nth-of-type(3) {
+        background: url('../images/twitter-logo-on-black-background.svg') no-repeat;
+      }
+      &:nth-of-type(4) {
+        background: url('../images/pinterest-sign.svg') no-repeat;
+      }
+      a {
+        font-size: 0;
+        display: block;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+  }
+  .mentions {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p, a {
+      font-size: 0.6em;
+      color: #fff;
+    }
+  }
+}

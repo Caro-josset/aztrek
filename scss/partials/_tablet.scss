@@ -1,0 +1,164 @@
+
+.section-title {
+  @include title($bleu-fonce, 2.25em);
+}
+
+.title-p {
+  font-size: 1.125em;
+}
+
+.cta {
+  @include button($jaune, 1.25em, 150px);
+}
+
+/* ---------------------------------------------------------------
+                        HEADER
+--------------------------------------------------------------- */
+
+#header-title {
+  display: flex;
+  padding-top: 40px;
+  align-items: center;
+  img {
+    width: 250px;
+    margin-left: 90px;
+  }
+  h1 {
+    font-size: 1.6em;
+    margin-left: 40px;
+  }
+}
+
+.search-form {
+  .search-btn {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* ===================== MAP SVG ======================== */
+
+#map-svg {
+  width: 50%;
+  margin-left: 40%;
+
+  p {
+    width: 70%;
+    font-size: 1.25em;
+    padding-right: 20px;
+    top: 20px;
+    left: -150px;
+  }
+}
+
+/* ===================== MAIN-NAV ======================== */
+
+/* menu burger*/
+#nav-toggle {
+  &::before {
+    right: 140px;
+  }
+}
+
+/* ===================== NAV-BOTTOM ======================== */
+
+.nav-bottom {
+  .cta {
+    margin-left: 90px;
+  }
+  .log {
+    margin-right: 240px;
+  }
+}
+
+/* ===================== SLIDER ======================== */
+
+#destinations {
+  .owl-carousel {
+    display: none;
+  }
+}
+
+#destinations {
+  .slider {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    article {
+      margin: 0 auto;
+      flex-basis: 50%;
+      align-items: center;
+      max-width: 314px;
+      img {
+        margin: 0 auto;
+      }
+      .legende {
+        top: 130px;
+      }
+
+    }
+  }
+}
+
+/* ===================== STORIES ======================== */
+
+#stories {
+  background: url('../images/bg-stories-desktop.png') no-repeat top;
+  header {
+    background: transparent;
+  }
+  &::after {
+    content:'';
+    width: 0;
+  }
+}
+
+#stories {
+  header {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+#stories {
+  article.header-article{
+    p:last-of-type {
+      font-size: 2.25em;
+      margin-left: 50%;
+      margin-top: 0
+    }
+}
+
+}
+
+.stories {
+  article {
+    .profil {
+      p {
+        font-size: 1.3em;
+      }
+    }
+  }
+}
+
+.stories-bloc p.title-storie {
+  font-size: 1.25em;
+  text-align: center;
+  padding: 10px 5px;
+}
+
+/* ===================== Communauté ======================== */
+
+
+
+#communaute {
+  .users {
+    display: flex;
+    justify-content: center;
+  }
+  article {
+    width: 250px;
+    margin: 0 60px;
+  }
+}
