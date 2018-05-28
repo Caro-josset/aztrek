@@ -1,6 +1,7 @@
         <article>
             <a href="destinations.php?id=<?php echo $destination["id"]; ?>">
             <h2><?php echo $destination["pays"];?></h2>
+            <p class="hover">GO</p>
             <div><img src="uploads/<?php echo $destination["picture"]; ?>" alt="">
               <div class="legende">
                 <a href="#">34 stories</a>

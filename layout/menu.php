@@ -11,10 +11,10 @@ $list_destinations = getAllDestinations();
         <button id="close-btn" type="button">Close</button>
         <ul>
           <li><a href="index.php" id="home" class="title-nav">Accueil</a></li>
-          <li class="has-sub"><a href="destinations.php" class="title-nav">Destinations</a>
+          <li class="has-sub"><a href="#" class="title-nav">Destinations</a>
             <ul class="dropdown">
             <?php foreach ($list_destinations as $destination) : ?>
-              <li><a href="destinations.php"><?php echo $destination["pays"];?></a></li>
+              <li><a href="pays.php"><?php echo $destination["pays"];?></a></li>
             <?php endforeach; ?> 
             </ul>
           </li>

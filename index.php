@@ -7,6 +7,8 @@ require_once 'model/database.php';
 
 $list_destinations = getAllDestinations();
 
+$list_stories = getAllStories(3);
+
 //debug($list_projects);
 
 //echo "<pre>";
@@ -88,6 +90,7 @@ getHeader("Accueil");
 
         </div>
 
+<!-- destinations dynamique-->
         <div class="slider">
 
          <?php foreach ($list_destinations as $destination) : ?>
@@ -126,57 +129,10 @@ getHeader("Accueil");
 
         <div class="stories">
 
-          <article class="stories-bloc">
-            <a href="#">
-              <p class="hover">GO</p>
-            <div class="profil">
-              <p>@ludo-trico</p>
-              <img src="./images/user-1.jpg" alt="photo dun utilisateur en noir et blanc">
-            </div>
-            <div class="stories-img"><img src="./images/img-storie-1.jpg" alt="temples aztèque mexicains">
-              <div class="stat">
-                <p>630</p>
-                <p>503</p>
-              </div>
-            </div>
-            <p class="title-storie">Caminando Mexico</p>
-            </a>
-          </article>
-
-          <article class="stories-bloc">
-            <a href="#">
-              <p class="hover">GO</p>
-            <div class="profil">
-              <p>@david-trek</p>
-              <img src="./images/user-2.jpg" alt="photo dun utilisateur en noir et blanc">
-            </div>
-            <div class="stories-img"><img src="./images/img-storie-2.jpg" alt="église jaune et valcan nuageux">
-              <div class="stat">
-                <p>456</p>
-                <p>620</p>
-              </div>
-            </div>
-            <p class="title-storie">10 jours à Salvador</p>
-          </a>
-          </article>
-
-          <article class="stories-bloc">
-            <a href="">
-              <p class="hover">GO</p>
-            <div class="profil">
-              <p>@aurelunion</p>
-              <img src="./images/user-3.jpg" alt="photo dun utilisateur en noir et blanc">
-            </div>
-            <div class="stories-img"><img src="./images/img-storie-3.jpg" alt="piscine naturelle avec un rayon de lumière">
-              <div class="stat">
-                <p>367</p>
-                <p>360</p>
-              </div>
-            </div>
-            <p class="title-storie">Découverte des trésors du Honduras</p>
-            </a>
-          </article>
-
+          <?php foreach ($list_stories as $story) : ?>
+            <?php include 'include/story_inc.php'; ?>
+          <?php endforeach; ?> 
+         
         </div>
 
         <a href="#" class="cta">Ajoutez votre aventure</a>

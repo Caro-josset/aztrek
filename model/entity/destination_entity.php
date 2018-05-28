@@ -18,6 +18,7 @@ function getAllDestinations(int $limit = 999)
             WHERE trek.en_avant = 1;";
 
     $stmt = $connection->prepare($query);
+    $stmt->bindParam(":limit", $limit);
     $stmt->execute();
 
     return $stmt->fetchAll();
