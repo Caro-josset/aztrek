@@ -3,7 +3,7 @@
             <a href="stories.php">
               <p class="hover">GO</p>
             <div class="profil">
-              <p><?php echo $story["pseudo"]; ?></p>
+              <p>@<?php echo $story["pseudo"]; ?></p>
               <img src="uploads/<?php echo $story["profil_picture"]; ?>" alt="photo d'un utilisateur en noir et blanc">
             </div>
             <div class="stories-img"><img src="uploads/<?php echo $story["picture"]; ?>" alt="">
@@ -12,6 +12,6 @@
                 <p>503</p>
               </div>
             </div>
-            <p class="title-storie">Caminando Mexico</p>
+            <p class="title-storie"><?php echo $story["title_trek"]; ?></p>
             </a>
           </article>

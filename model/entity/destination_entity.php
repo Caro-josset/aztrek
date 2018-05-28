@@ -1,6 +1,6 @@
 <?php
 
-function getAllDestinations(int $limit = 999)
+function getAllDestinations()
 {
     /* @var $connection PDO */
     global $connection;
@@ -8,7 +8,7 @@ function getAllDestinations(int $limit = 999)
     $query = "SELECT 
                 trek.id,
                 trek.price,
-                trek.picture AS picture,
+                trek.picture,
                 trek.destination_id,
                 destination.id,
                 trek.en_avant,
@@ -18,7 +18,6 @@ function getAllDestinations(int $limit = 999)
             WHERE trek.en_avant = 1;";
 
     $stmt = $connection->prepare($query);
-    $stmt->bindParam(":limit", $limit);
     $stmt->execute();
 
     return $stmt->fetchAll();

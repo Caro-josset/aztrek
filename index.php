@@ -9,6 +9,8 @@ $list_destinations = getAllDestinations();
 
 $list_stories = getAllStories(3);
 
+$list_users = getAllUsers(2);
+
 //debug($list_projects);
 
 //echo "<pre>";
@@ -90,7 +92,7 @@ getHeader("Accueil");
 
         </div>
 
-<!-- destinations dynamique-->
+    <!-- destinations dynamique-->
         <div class="slider">
 
          <?php foreach ($list_destinations as $destination) : ?>
@@ -108,7 +110,6 @@ getHeader("Accueil");
     </div>
 
     <!-- stories -->
-
 
       <section id="stories">
         <div class="container">
@@ -150,25 +151,9 @@ getHeader("Accueil");
 
       <div class="users">
 
-        <article>
-          <a href="#">
-          <img src="./images/photo-user-hamouch.jpg" alt="photo user noir et blanc">
-          <h2>Hamouch_Hamouch</h2>
-          <div class="info">
-            <p>32 stories</p>
-            <p class="level-5">As du trek</p>
-          </div>
-          </a>  
-        </article>
-
-        <article>
-          <img src="./images/photo-profil-madbou.png" alt="photo user noir et blanc">
-          <h2>c.madbou</h2>
-          <div class="info">
-            <p>27 stories</p>
-            <p class="level-4">Trekker confirmé</p>
-          </div>
-        </article>
+        <?php foreach ($list_users as $user) : ?>
+            <?php include 'include/communaute_inc.php'; ?>
+        <?php endforeach; ?>
 
       </div>
 
