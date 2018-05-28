@@ -7,6 +7,6 @@
                 <a href="#">15 trekkers</a>
               </div>
             </div>
-            <p class="price"><?php echo $destination["price"]; ?></p>
+            <p class="price">à partir de <?php echo $destination["price"]; ?> €</p>
             </a>
           </article>
