@@ -6,12 +6,12 @@
 
 <form action="create_query.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
-        <label for="title">Nom</label>
+        <label for="title">Pays</label>
         <input type="text" id="title" name="title" class="form-control">
     </div>
     <div class="form-group">
-        <label for="desctiption">Prénom</label>
-        <input type="text" id="desctiption" name="desctiption" class="form-control">
+        <label for="desctiption">Description</label>
+        <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
     </div>
     <div class="form-group">
         <label for="picture">Photo</label>

@@ -5,6 +5,7 @@
  * @param mixed $var Le variable à afficher
  * @param bool $die Arrêter l'execution
  */
+
 function debug($var, bool $die = true) {
     echo "<pre>";
     print_r($var);
@@ -12,6 +13,13 @@ function debug($var, bool $die = true) {
     if ($die) {
         die;
     }
+}
+
+function currentUser() {
+    if (isset($_SESSION["id"])) {
+        return getOneUser($_SESSION["id"]);
+    }
+    return null;
 }
 
 /**

@@ -3,8 +3,12 @@
 
 // Récupérer les données du formulaire
 
+$pays = $_POST["destination_id"];
 $title = $_POST["title"];
+$price = $_POST["price"];
 $description = $_POST["description"];
+$niveau = $_POST["niveau_id"];
+$en_avant = isset($_POST["en_avant"]) ? 1 : 0;
 $picture = "";
 
 // Vérifier si une image est uploadée
@@ -15,7 +19,7 @@ if (isset($_FILES["picture"])) {
 }
 
 // Insertion en BDD
-insertDestination($title, $description, $picture);
+insertTrek($pays, $title, $price, $description, $niveau, $en_avant, $picture);
 
 // Redirection vers liste des membres
 header("Location: index.php");

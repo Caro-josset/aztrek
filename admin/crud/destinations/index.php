@@ -2,7 +2,7 @@
     require_once '../../../model/database.php';
     require_once '../../layout/header.php';
     
-    $list_members = getAllMembers();
+    $list_destinations = getAllDestinations();
 ?>
 
 <h1>Gestion des destinations</h1>
@@ -17,15 +17,15 @@
         <th>Actions</th>
     </thead>
     <tbody>
-        <?php foreach ($list_members as $member) : ?>
+        <?php foreach ($list_destinations as $destination) : ?>
             <tr>
-                <td><?php echo $member["lastname"];?></td>
-                <td><?php echo $member["firstname"];?></td>
-                <?php $picture = (!empty($member["picture"])) ? "../../../uploads/" . $member["picture"] : "http://via.placeholder.com/150x150"; ?>
+                <td><?php echo $destination["title"];?></td>
+                <td><?php echo $destination["description"];?></td>
+                <?php $picture = (!empty($destination["picture"])) ? "../../../uploads/" . $destination["picture"] : "http://via.placeholder.com/150x150"; ?>
                 <td><img src="<?php echo $picture;?>" class="img-thumbnail" alt=""></td>
                 <td>
-                    <a href="update.php?id=<?php echo $member["id"];?>" class="btn btn-secondary"><i class="fa fa-edit"></i></a>
-                    <a href="delete_query.php?id=<?php echo $member["id"];?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>    
+                    <a href="update.php?id=<?php echo $destination["id"];?>" class="btn btn-secondary"><i class="fa fa-edit"></i></a>
+                    <a href="delete_query.php?id=<?php echo $destination["id"];?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>    
                 </td>
             </tr>
         <?php endforeach ;?>

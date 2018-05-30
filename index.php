@@ -5,13 +5,13 @@ require_once 'model/database.php';
 
 // Déclaration des variables
 
-$list_destinations = getAllDestinations();
+$list_destinations = getAllDestinationsEnAvant();
 
 $list_stories = getAllStories(3);
 
 $list_users = getAllUsers(2);
 
-//debug($list_projects);
+// debug($list_destinations);
 
 //echo "<pre>";
 //print_r($list_projects);

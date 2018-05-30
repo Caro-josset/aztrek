@@ -14,7 +14,7 @@ $list_destinations = getAllDestinations();
           <li class="has-sub"><a href="#" class="title-nav">Destinations</a>
             <ul class="dropdown">
             <?php foreach ($list_destinations as $destination) : ?>
-              <li><a href="pays.php"><?php echo $destination["pays"];?></a></li>
+              <li><a href="pays.php?id=<?php echo $destination["id"];?>"><?php echo $destination["title"];?></a></li>
             <?php endforeach; ?> 
             </ul>
           </li>

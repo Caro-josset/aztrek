@@ -48,7 +48,11 @@
 
     <!-- navigation bas header -->
     <div class="nav-bottom">
-      <a href="#" class="cta">Rejoindre la communauté</a>
+    <?php if (!isset($utilisateur["id"])) : ?>
+            <a href="#" class="cta">Rejoindre la communauté</a>
+        <?php else: ?>
+            <a href="#">Mon Compte</a>
+        <?php endif; ?>
       <a href="<?php echo ADMIN_URL ;?>login.php" class="log">login</a>
     </div>
 
