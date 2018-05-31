@@ -9,7 +9,6 @@ if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
 }
 
 $id = $_GET["id"];
-
 $pays = getOneDestination($id);
 $list_treks = getAllTreksByDestination($id);
 
@@ -23,6 +22,7 @@ getHeader($pays["title"]);
 
     <?php foreach ($list_treks as $trek) : ?>
             <article>
+                <a href="trek.php?id=<?php echo $trek["trek"];?>">
                 <h2><?php echo $trek["title"]; ?></h2>
                 <img src="uploads/<?php echo $trek["picture"];?>" alt="">
                 <ul>
@@ -30,6 +30,7 @@ getHeader($pays["title"]);
                     <li><?php echo $trek["grade"]; ?>/5</li>
                     <li><?php echo $trek["niveau"]; ?></li>
                 </ul>
+                </a>
             </article>
     <?php endforeach; ?> 
 </div>

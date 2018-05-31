@@ -1,4 +1,7 @@
-
+<?php
+require_once __DIR__ . '/../library/functions.php';
+$utilisateur = currentUser();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -48,12 +51,17 @@
 
     <!-- navigation bas header -->
     <div class="nav-bottom">
-    <?php if (!isset($utilisateur["id"])) : ?>
-            <a href="#" class="cta">Rejoindre la communauté</a>
-        <?php else: ?>
-            <a href="#">Mon Compte</a>
-        <?php endif; ?>
-      <a href="<?php echo ADMIN_URL ;?>login.php" class="log">login</a>
+      <a href="<?php echo ADMIN_URL ;?>login.php" class="cta">Rejoindre la communauté</a>
+      <?php if (!isset($utilisateur["id"])) : ?>
+          <a href="<?php echo ADMIN_URL ;?>" class="log">login</a>
+      <?php else: ?>
+        <?php if ($utilisateur["admin"] == 1) : ?>
+          <a href="<?php echo ADMIN_URL ;?>" class="connect">Mon Compte</a>
+          <?php else: ?>
+          <a href="#" class="connect">Mon Compte</a>
+          <?php endif; ?>
+          <a href="<?php echo ADMIN_URL ;?>logout.php" class="cta">Deconnexion</a>
+      <?php endif; ?>
     </div>
 
   </header>

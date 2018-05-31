@@ -20,7 +20,7 @@ $list_destinations = getAllDestinations();
           </li>
           <li class="has-sub"><a href="communaute.php" class="title-nav">Communauté</a>
             <ul class="dropdown">
-              <li><a href="#">Rejoindre</a></li>
+              <li><a href="<?php echo ADMIN_URL ;?>login.php">Rejoindre</a></li>
               <li><a href="#">Membres</a></li>
               <li><a href="#">Espace de co-trekking</a></li>
             </ul>

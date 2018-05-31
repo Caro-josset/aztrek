@@ -10,12 +10,17 @@ $menus = [
     [
         "label" => "Destinations",
         "url" => ADMIN_URL . "crud/destinations/",
-        "icon" => "users"
+        "icon" => "globe"
     ],
     [
         "label" => "Treks",
         "url" => ADMIN_URL . "crud/treks/",
-        "icon" => "briefcase"
+        "icon" => "map"
+    ],
+    [
+        "label" => "Devis",
+        "url" => ADMIN_URL . "crud/devis/",
+        "icon" => "map"
     ]
 ];
 ?>
@@ -24,7 +29,7 @@ $menus = [
     <?php foreach ($menus as $menu) : ?>
         <li class="nav-item">
             <a class="nav-link <?php echo (currentPath() == $menu["url"]) ? "active" : ""; ?>" href="<?php echo $menu["url"]; ?>">
-                <i class="fa fa-<?php echo $menu["icon"]; ?>"></i>
+                <i class="fa fa-<?php echo  $menu["icon"]; ?>"></i>
                 <?php echo $menu["label"]; ?>
             </a>
         </li>

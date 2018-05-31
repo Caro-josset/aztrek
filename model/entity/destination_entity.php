@@ -35,7 +35,7 @@ function getAllDestinationsEnAvant()
     global $connection;
 
     $query = "SELECT 
-                trek.id,
+                trek.id AS trek,
                 trek.price,
                 trek.picture,
                 trek.destination_id,

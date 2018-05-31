@@ -282,10 +282,13 @@ ul.sidr-class-dropdown li a,
     background: url('../images/user.svg') no-repeat;
     margin-right: 80px;
   }
+  a.connect {
+    font-size: 0;
+    width: 60px;
+    height: 60px;
+    background: url('../images/user-connect.svg') no-repeat;
+    margin-right: 80px; } 
 }
-
-
-
 
 
 /* ---------------------------------------------------------------

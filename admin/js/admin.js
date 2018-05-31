@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     $('.table').DataTable();
     $('select').select2();
+    $('textarea').summernote();
 
     $('table a.btn-danger').click(function (event) {
         event.preventDefault();

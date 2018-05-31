@@ -19,18 +19,41 @@ function getAllTreks()
     return $stmt->fetchAll();
 }
 
+function getOneTrek(int $id)
+{
+    /* @var $connection PDO */
+    global $connection;
+
+    $query = "SELECT 
+                trek.*,
+                niveau.label AS niveau,
+                round(avg(notation.grade),0) AS grade
+            FROM trek
+            LEFT JOIN niveau ON niveau.id = trek.niveau_id
+            LEFT JOIN notation ON notation.trek_id = trek.id
+            WHERE trek.id = :id;";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+
+    return $stmt->fetch();
+}
+
 function getAllTreksByDestination(int $id)
 {
     /* @var $connection PDO */
     global $connection;
 
     $query = "SELECT 
+                trek.id AS trek,
                 trek.title AS title,
                 trek.price AS price,
                 trek.description AS description,
                 niveau.label AS niveau,
                 trek.picture,
                 round(avg(notation.grade),0) AS grade,
+                count(trek.id) AS trek_nb,
                 count(story.id) AS story_nb
             FROM trek
             LEFT JOIN notation ON notation.trek_id = trek.id

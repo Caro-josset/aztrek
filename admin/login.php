@@ -22,8 +22,7 @@
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            <a href="users/index.php" class="btn btn-lg btn-primary btn-block">Créer mon compte</a>
         </form>
-
-    
 </body>
 </html>

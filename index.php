@@ -11,6 +11,7 @@ $list_stories = getAllStories(3);
 
 $list_users = getAllUsers(2);
 
+
 // debug($list_destinations);
 
 //echo "<pre>";
@@ -103,7 +104,7 @@ getHeader("Accueil");
 
         </div>
 
-        <a href="#" class="cta">Voir plus de destinations</a>
+        <a href="destinations.php" class="cta">Voir plus de destinations</a>
 
       </section>
 

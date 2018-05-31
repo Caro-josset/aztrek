@@ -1,5 +1,5 @@
       <article>
-          <a href="destinations.php?id=<?php echo $destination["id"]; ?>">
+          <a href="trek.php?id=<?php echo $destination["trek"]; ?>">
             <h2><?php echo $destination["pays"];?></h2>
             <p class="hover">GO</p>
             <div><img src="uploads/<?php echo $destination["picture"]; ?>" alt="">

@@ -16,7 +16,8 @@ require_once '../../layout/header.php';
         <label for="pays">Pays</label>
         <select name="destination_id" id="pays" class="form-control">
             <?php foreach ($list_destinations as $destination):?>
-                <option value="<?php echo $destination["id"]?>"><?php echo $destination["title"]?></option>
+            <?php $selected = ($destination["id"] == $trek["destination_id"]) ? 'selected' : '';?>
+                <option value="<?php echo $destination["id"]?>" <?php echo $selected;?>><?php echo $destination["title"]?></option>
             <?php endforeach ;?>
         </select>
     </div>
@@ -36,13 +37,15 @@ require_once '../../layout/header.php';
         <label for="niveau">Niveau</label>
         <select name="niveau_id" id="niveau" class="form-control">
             <?php foreach ($list_niveaux as $niveau):?>
-                <option value="<?php echo $niveau["id"]?>"><?php echo $niveau["label"]?></option>
+            <?php $selected = ($niveau["id"] == $trek["niveau_id"]) ? 'selected' : '';?>
+                <option value="<?php echo $niveau["id"]?>" <?php echo $selected;?>><?php echo $niveau["label"]?></option>
             <?php endforeach ;?>
         </select>
     </div>
     <div class="form-group">
         <label for="en_avant">Mise en avant</label>
-        <input type="checkbox" id="en_avant" name="en_avant" class="form-control">
+        <?php $checked = ($trek["en_avant"] == 1) ? 'checked' : '';?>
+        <input type="checkbox" id="en_avant" name="en_avant" class="form-control" <?php echo $checked;?>>
     </div>
     <div class="form-group">
         <label for="picture">Photo</label>

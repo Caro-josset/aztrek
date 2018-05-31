@@ -25,7 +25,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     // Si l'utilisateur n'est pas connecté
 if (!isset($utilisateur["id"])) {
     header("Location: login.php");
-} elseif ($utilisateur["admin"] === 0) {
+} elseif ($utilisateur["admin"] == 0) {
     // Si il est connecté mais pas admin
-    header("Location: login.php");
+    header("Location: ../index.php");
 }

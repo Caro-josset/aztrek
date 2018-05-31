@@ -58,3 +58,24 @@ function getOneUser(int $id) {
 
     return $stmt->fetch();
 }
+
+function insertUser(string $pseudo, string $email, string $password, string $firstname, string $lastname, string $picture, string $country, string $town, int $postal_code, string $about) {
+    /* @var $connection PDO */
+    global $connection;
+
+    $query = "INSERT INTO user (pseudo, email, password, firstname, lastname, picture, country, town, postal_code, about)
+            VALUES (:pseudo, :email, SHA1(:password), :firstname, :lastname, :picture, :country, :town, :postal_code, :about);";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":pseudo", $pseudo);
+    $stmt->bindParam(":email", $email);
+    $stmt->bindParam(":password", $password);
+    $stmt->bindParam(":firstname", $firstname);
+    $stmt->bindParam(":lastname", $lastname);
+    $stmt->bindParam(":picture", $picture);
+    $stmt->bindParam(":country", $country);
+    $stmt->bindParam(":town", $town);
+    $stmt->bindParam(":postal_code", $postal_code);
+    $stmt->bindParam(":about", $about);
+    $stmt->execute();
+}

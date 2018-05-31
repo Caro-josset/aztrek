@@ -255,6 +255,12 @@ ul.sidr-class-dropdown li a,
     height: 45px;
     background: url("../images/user.svg") no-repeat;
     margin-right: 80px; }
+  .nav-bottom a.connect {
+    font-size: 0;
+    width: 60px;
+    height: 60px;
+    background: url("../images/user-connect.svg") no-repeat;
+    margin-right: 80px; }
 
 /* ---------------------------------------------------------------
                         MAIN
@@ -980,6 +986,11 @@ footer {
 
   /* =====================NAV BOTTOM ======================== */
   .nav-bottom .log {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    margin-right: 0; }
+  .nav-bottom a.connect {
     position: absolute;
     right: 10px;
     top: 20px;
