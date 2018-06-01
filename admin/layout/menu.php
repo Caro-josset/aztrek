@@ -20,7 +20,7 @@ $menus = [
     [
         "label" => "Devis",
         "url" => ADMIN_URL . "crud/devis/",
-        "icon" => "map"
+        "icon" => "file"
     ]
 ];
 ?>
@@ -28,6 +28,7 @@ $menus = [
 
     <?php foreach ($menus as $menu) : ?>
         <li class="nav-item">
+            <!-- Configuration de l'url liée au champ selectionné -->
             <a class="nav-link <?php echo (currentPath() == $menu["url"]) ? "active" : ""; ?>" href="<?php echo $menu["url"]; ?>">
                 <i class="fa fa-<?php echo  $menu["icon"]; ?>"></i>
                 <?php echo $menu["label"]; ?>

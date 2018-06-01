@@ -8,14 +8,15 @@ if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
     header("Location: 404.php");
 }
 
-
+// Définition des variables
 $id = $_GET["id"];
 
-$story = getOneStory($id);
+$story = getOneEntity("story", $id);
 
 getHeader($story["title"]);
 ?>
 
+<!-- affichage dynamique des données liées à la story -->
 <div class="container">
 
 <h1>
@@ -28,9 +29,8 @@ getHeader($story["title"]);
 
 <aside>
         <img src="uploads/<?php echo $story["picture"];?>" alt="">
-</aside>
 
-<a href="<?php echo ADMIN_URL ;?>login.php" class="cta">Demander votre devis</a>
+</aside>
 
 </div>
 

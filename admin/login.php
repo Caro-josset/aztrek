@@ -10,6 +10,7 @@
 </head>
 <body class="text-center">
 
+<!-- formulaire de connexion -->
         <form class="form-signin" action="index.php" method="post">
             <h1 class="h3 mb-3 font-weight-normal">Login</h1>
             <label for="inputEmail" class="sr-only">Email</label>
@@ -22,6 +23,7 @@
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <!-- Lien vers la création d'un compte -->
             <a href="users/index.php" class="btn btn-lg btn-primary btn-block">Créer mon compte</a>
         </form>
 </body>

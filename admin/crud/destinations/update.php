@@ -8,7 +8,7 @@ require_once '../../layout/header.php';
 ?>
 
     <h1>Modifier destination</h1>
-
+<!-- Formulaire de modification d'une destination -->
     <form action="update_query.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="title">Pays</label>
@@ -26,6 +26,7 @@ require_once '../../layout/header.php';
             <?php endif ;?>
         </div>
         <input type="hidden" name="id" value="<?php echo $destination["id"]; ?>">
+        <!-- Envoi des modifications en BDD -->
         <button type="submit" class="btn btn-success">
             <i class="fa fa-save"></i> Enregistrer</button>
     </form>

@@ -7,9 +7,11 @@
 
 <h1>Nouveau trek</h1>
 
+<!-- Formulaire de création d'un trek -->
 <form action="create_query.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="pays">Pays</label>
+        <!-- Liste déroulante pays -->
         <select name="destination_id" id="pays" class="form-control">
             <?php foreach ($list_destinations as $destination):?>
                 <option value="<?php echo $destination["id"]?>"><?php echo $destination["title"]?></option>
@@ -29,6 +31,7 @@
         <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
     </div>
     <div class="form-group">
+        <!-- Liste déroulante niveux -->
         <label for="niveau">Niveau</label>
         <select name="niveau_id" id="niveau" class="form-control">
             <?php foreach ($list_niveaux as $niveau):?>
@@ -44,6 +47,7 @@
         <label for="picture">Photo</label>
         <input type="file" id="picture" name="picture" class="form-control" accept="image/*">
     </div>
+    <!-- Envoi du formulaire en BDD -->
     <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Enregistrer</button>
 </form>
 

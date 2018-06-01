@@ -8,6 +8,7 @@ if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
     header("Location: 404.php");
 }
 
+// Définition des variables
 $id = $_GET["id"];
 $pays = getOneDestination($id);
 $list_treks = getAllTreksByDestination($id);
@@ -15,6 +16,7 @@ $list_treks = getAllTreksByDestination($id);
 getHeader($pays["title"]);
 ?>
 
+<!-- Affichage dynamique des données de l'ensemble des treks d'un pays-->
 <div class="container">
 
     <h1><?php echo $pays["title"]; ?></h1>

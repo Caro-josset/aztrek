@@ -1,0 +1,22 @@
+{
+  "name": "aztrek",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caro-josset/aztrek.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caro-josset/aztrek/issues"
+  },
+  "homepage": "https://github.com/Caro-josset/aztrek#readme",
+  "dependencies": {
+    "fontawesome": "^4.7.2"
+  }
+}

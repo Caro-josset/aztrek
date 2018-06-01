@@ -23,6 +23,7 @@ foreach ($files as $file) {
     }
 }
 
+// Supprimer une entité d'après sa table et son id
 function deleteEntity(string $table, int $id) {
     /* @var $connection PDO */
     global $connection;
@@ -34,6 +35,7 @@ function deleteEntity(string $table, int $id) {
     $stmt->execute();
 }
 
+// Récupérer les données d'une entité d'après sa table et son id
 function getOneEntity(string $table, int $id) {
     /* @var $connection PDO */
     global $connection;
@@ -49,6 +51,7 @@ function getOneEntity(string $table, int $id) {
     return $stmt->fetch();
 }
 
+// Récupérer les données des entités d'après une table
 function getAllEntity(string $table) {
     /* @var $connection PDO */
     global $connection;

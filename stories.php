@@ -3,16 +3,18 @@
 require_once 'library/functions.php';
 require_once 'model/database.php';
 
-$list_stories = getAllStories(999);
+// Définition des variables
+$list_stories = getAllStories(999); // Voir pour rectifier la limite de publication
 
 getHeader("Stories");
 ?>
 
+<!-- Affichage dynamique des données de l'ensemble des stories -->
 <div class="container">
 
 <?php foreach ($list_stories as $story) : ?>
     <article class="stories-bloc">
-            <a href="story.php?id=<?php echo $story["id"];?>">
+            <a href="story.php?id=<?php echo $story["id"];?>" action="<?php setViewsNumber(); ?>">
               <p class="hover">GO</p>
             <div class="profil">
               <p>@<?php echo $story["user"]; ?></p>

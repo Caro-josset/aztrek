@@ -11,6 +11,7 @@ require_once '../../layout/header.php';
 
     <h1>Modifier trek</h1>
 
+<!-- Formulaire de modification d'un trek -->
     <form action="create_query.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="pays">Pays</label>
@@ -51,6 +52,7 @@ require_once '../../layout/header.php';
         <label for="picture">Photo</label>
         <input type="file" id="picture" name="picture" class="form-control" accept="image/*">
     </div>
+    <!-- Envoi des modifications en BDD -->
     <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Enregistrer</button>
 </form>
 

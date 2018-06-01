@@ -2,7 +2,7 @@
 
   <footer>
 
-    <a href="index.html" id="logo-footer"><img src="./images/logo-blanc.svg" alt="le logo aztrek en blanc"></a>
+    <a href="index.php" id="logo-footer"><img src="./images/logo-blanc.svg" alt="le logo aztrek en blanc"></a>
 
     <div class="contact">
       <a href="#">01 56 32 63 69</a>

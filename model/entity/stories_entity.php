@@ -1,5 +1,6 @@
 <?php
 
+// Récupérer les données d'un nombre défini de stories avec le user, le nbr de like et le trek associé
 function getAllStories(int $limit = 999)
 {
     /* @var $connection PDO */
@@ -27,6 +28,7 @@ function getAllStories(int $limit = 999)
     return $stmt->fetchAll();
 }
 
+// Récupérer une story selon l'id avec le user, le nbr de like et le trek associé
 function getOneStory(int $id)
 {
     /* @var $connection PDO */
@@ -53,3 +55,19 @@ function getOneStory(int $id)
 
     return $stmt->fetch();
 }
+
+// Compter le noimbre de vues sur une story - !A REVOIR
+function setViewsNumber()
+{
+    /* @var $connection PDO */
+    global $connection;
+
+    $query = "UPDATE story 
+            SET views = views + 1 
+            WHERE story.id = :id;";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+}
+

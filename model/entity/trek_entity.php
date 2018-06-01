@@ -1,5 +1,6 @@
 <?php
 
+// Récupérer les données de tous les treks avec la destination et le niveau associé
 function getAllTreks()
 {
     /* @var $connection PDO */
@@ -19,6 +20,7 @@ function getAllTreks()
     return $stmt->fetchAll();
 }
 
+// Récupérer les données d'une trek selon son id
 function getOneTrek(int $id)
 {
     /* @var $connection PDO */
@@ -40,6 +42,36 @@ function getOneTrek(int $id)
     return $stmt->fetch();
 }
 
+// Récupérer les données de tous les treks qui sont "en avant"
+function getAllDestinationsEnAvant()
+{
+    /* @var $connection PDO */
+    global $connection;
+
+    $query = "SELECT 
+                trek.id AS trek,
+                trek.price,
+                trek.picture,
+                trek.destination_id,
+                destination.id,
+                trek.en_avant,
+                destination.title AS pays,
+                count(story.id) AS story_nb
+            FROM trek
+            INNER JOIN destination ON destination.id = trek.destination_id
+            LEFT JOIN devis ON devis.trek_id = trek.id
+            LEFT JOIN story ON story.devis_id = devis.id
+            WHERE trek.en_avant = 1
+            GROUP BY trek.id;";
+
+    $stmt = $connection->prepare($query);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
+// Recupérer les données de tous les treks selon l'id de la destination 
+// avec leur note moyenne, leur niveau, le nbr de stories, le nbr de treks
 function getAllTreksByDestination(int $id)
 {
     /* @var $connection PDO */
@@ -70,6 +102,7 @@ function getAllTreksByDestination(int $id)
     return $stmt->fetchAll();
 }
 
+// Récupérer toutes données de la table niveau
 function getAllNiveaux() {
     /* @var $connection PDO */
     global $connection;
@@ -83,6 +116,7 @@ function getAllNiveaux() {
     return $stmt->fetchAll();
 }
 
+// Insérer un nouveau trek en BDD
 function insertTrek(string $pays, string $title, int $price, string $description, int $niveau, int $en_avant, string $picture) {
     /* @var $connection PDO */
     global $connection;
@@ -101,6 +135,7 @@ function insertTrek(string $pays, string $title, int $price, string $description
     $stmt->execute();
 }
 
+// Mettre à jour les données d'un trek
 function updateTrek(int $id, string $pays, string $title, int $price, string $description, int $niveau, int $en_avant, string $picture) {
     /* @var $connection PDO */
     global $connection;

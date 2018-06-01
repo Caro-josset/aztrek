@@ -1,4 +1,6 @@
-      <article>
+   
+<!-- Afficher dynamiquement les destinations mises "en_avant" -->
+   <article>
           <a href="trek.php?id=<?php echo $destination["trek"]; ?>">
             <h2><?php echo $destination["pays"];?></h2>
             <p class="hover">GO</p>

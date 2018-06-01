@@ -29,6 +29,7 @@ $url = $_SERVER['HTTP_REFERER'];
 <div class="container">
 <h1>Création d'un compte Trekker</h1>
 
+<!-- Formulaire de Création d'un trek -->
 <form action="create_query.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="pseudo">Pseudo</label>
@@ -72,6 +73,7 @@ $url = $_SERVER['HTTP_REFERER'];
     </div>
 
         <input type="hidden" name="url" value="<?php echo $url; ?>">
+    <!-- Envoi du formulaire en BDD -->
     <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Enregistrer</button>
 </form>
 </div>

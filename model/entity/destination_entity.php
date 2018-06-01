@@ -1,5 +1,6 @@
 <?php
 
+// Récuperer toutes les données de la table destination
 function getAllDestinations()
 {
     /* @var $connection PDO */
@@ -14,6 +15,7 @@ function getAllDestinations()
     return $stmt->fetchAll();
 }
 
+// Récuperer toutes les données d'un pays selon son id
 function getOneDestination(int $id) {
     /* @var $connection PDO */
     global $connection;
@@ -29,33 +31,7 @@ function getOneDestination(int $id) {
     return $stmt->fetch();
 }
 
-function getAllDestinationsEnAvant()
-{
-    /* @var $connection PDO */
-    global $connection;
-
-    $query = "SELECT 
-                trek.id AS trek,
-                trek.price,
-                trek.picture,
-                trek.destination_id,
-                destination.id,
-                trek.en_avant,
-                destination.title AS pays,
-                count(story.id) AS story_nb
-            FROM trek
-            INNER JOIN destination ON destination.id = trek.destination_id
-            LEFT JOIN devis ON devis.trek_id = trek.id
-            LEFT JOIN story ON story.devis_id = devis.id
-            WHERE trek.en_avant = 1
-            GROUP BY trek.id;";
-
-    $stmt = $connection->prepare($query);
-    $stmt->execute();
-
-    return $stmt->fetchAll();
-}
-
+// Insérer une nouvelle destination en BDD
 function insertDestination(string $title, string $description, string $picture) {
     /* @var $connection PDO */
     global $connection;
@@ -70,6 +46,7 @@ function insertDestination(string $title, string $description, string $picture) 
     $stmt->execute();
 }
 
+// Mettre à jour une destination en BDD
 function updateDestination(int $id, string $title, string $description, string $picture) {
     /* @var $connection PDO */
     global $connection;

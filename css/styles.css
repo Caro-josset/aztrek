@@ -712,6 +712,13 @@ p.level-4 {
       background-color: #0097e7;
       text-decoration: none; }
 
+/* ===================== Formulaire ======================== */
+.form-container form {
+  background-color: #0076B4;
+  color: #fff; }
+  .form-container form input {
+    margin: 1em; }
+
 /* ---------------------------------------------------------------
                         FOOTER
 --------------------------------------------------------------- */

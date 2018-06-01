@@ -58,7 +58,7 @@ $utilisateur = currentUser();
         <?php if ($utilisateur["admin"] == 1) : ?>
           <a href="<?php echo ADMIN_URL ;?>" class="connect">Mon Compte</a>
           <?php else: ?>
-          <a href="#" class="connect">Mon Compte</a>
+          <a href="user-admin.php" class="connect">Mon Compte</a>
           <?php endif; ?>
           <a href="<?php echo ADMIN_URL ;?>logout.php" class="cta">Deconnexion</a>
       <?php endif; ?>

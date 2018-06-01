@@ -1,4 +1,5 @@
 
+<!-- Afficher les 3 stories les plus likées sur la page d'accueil -->
  <article class="stories-bloc">
             <a href="stories.php">
               <p class="hover">GO</p>
@@ -9,7 +10,7 @@
             <div class="stories-img"><img src="uploads/<?php echo $story["picture"]; ?>" alt="">
               <div class="stat">
                 <p><?php echo $story["aime_nb"]; ?></p>
-                <p>503</p>
+                <p><?php echo $story["views"]; ?></p>
               </div>
             </div>
             <p class="title-storie"><?php echo $story["title_trek"]; ?></p>

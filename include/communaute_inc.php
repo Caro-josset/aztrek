@@ -1,3 +1,4 @@
+<!-- Afficher en dynamique les deux users les mieux notés sur la page d'accueil -->
 
         <article>
           <a href="users.php">

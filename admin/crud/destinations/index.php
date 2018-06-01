@@ -7,6 +7,7 @@
 
 <h1>Gestion des destinations</h1>
 
+<!-- Lien pour ajouter un pays -->
 <a href="create.php" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Ajouter</a>
 
 <table class="table">
@@ -16,6 +17,7 @@
         <th>Photo</th>
         <th>Actions</th>
     </thead>
+    <!-- Affichage dynamique des données d'une destination -->
     <tbody>
         <?php foreach ($list_destinations as $destination) : ?>
             <tr>
@@ -24,7 +26,9 @@
                 <?php $picture = (!empty($destination["picture"])) ? "../../../uploads/" . $destination["picture"] : "http://via.placeholder.com/150x150"; ?>
                 <td><img src="<?php echo $picture;?>" class="img-thumbnail" alt=""></td>
                 <td>
+                    <!-- Modifier les données d'une destination -->
                     <a href="update.php?id=<?php echo $destination["id"];?>" class="btn btn-secondary"><i class="fa fa-edit"></i></a>
+                    <!-- Supprimer une destination -->
                     <a href="delete_query.php?id=<?php echo $destination["id"];?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>    
                 </td>
             </tr>

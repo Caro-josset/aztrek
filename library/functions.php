@@ -18,6 +18,7 @@ function debug($var, bool $die = true) {
     }
 }
 
+// Récupérer les données de l'utilisateur connecté
 function currentUser() {
     if (isset($_SESSION["id"])) {
         return getOneUser($_SESSION["id"]);
